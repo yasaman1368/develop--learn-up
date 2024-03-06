@@ -8,7 +8,12 @@
                 <div class="nav-toggle"></div>
             </div>
             <div class="nav-menus-wrapper" style="transition-property: none;">
-                <?php wp_nav_menu(array(
+
+
+                <?php
+
+
+                wp_nav_menu(array(
                     'theme_location'  => 'top nav',
                     'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
                     'container'       => 'div',

@@ -124,7 +124,8 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
             }
             $indent = ($depth) ? str_repeat($t, $depth) : '';
 
-            if (false !== strpos($args->items_wrap, 'itemscope') && false === $this->has_schema) {
+
+            if (false !== strpos(isset($args->items_wrap) ? $args->items_wrap : '', 'itemscope') && false === $this->has_schema) {
                 $this->has_schema  = true;
                 $args->link_before = '<span itemprop="name">' . $args->link_before;
                 $args->link_after .= '</span>';
