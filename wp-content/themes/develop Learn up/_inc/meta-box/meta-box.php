@@ -10,12 +10,14 @@ function yas_more_setting_html_callback($post)
     wp_nonce_field('post_cat_nonce', 'post_cat_nonces');
     wp_nonce_field('post_video_nonce', 'post_video_nonces');
 ?>
+    <!-- box level -->
     <label for="post_level">سطح مقاله</label>
     <select name="post_level" id="post_level" style="display: block;">
         <option value="1" <?php echo selected(get_post_meta(get_the_ID(), '_post_level', true), 1) ?>>مقدماتی</option>
         <option value="2" <?php echo selected(get_post_meta(get_the_ID(), '_post_level', true), 2) ?>>متوسط</option>
         <option value="3" <?php echo selected(get_post_meta(get_the_ID(), '_post_level', true), 3) ?>>پیشرفته</option>
     </select>
+    <!-- box cat -->
     <label for="post_level" style="display: block;">دسته بندی</label>
     <?php
     wp_dropdown_categories(
@@ -28,6 +30,8 @@ function yas_more_setting_html_callback($post)
         ]
     );
     ?>
+
+    <!-- box file -->
     <h5>فایل ضمیمه</h5>
     <input type="checkbox" name="post_video" id="post_video" <?php
                                                                 $value = get_post_meta(get_the_ID(), '_post_video', true);
